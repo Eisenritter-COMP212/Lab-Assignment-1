@@ -14,11 +14,13 @@ namespace George_Zhou_COMP212_Sec05_Lab01
             int[] intArray = GenerateIntArray(10);
             double[] dblArray = GenerateDblArray(10, 100,2);
             char[] chrArray = GenerateChrArray(10);
+            string[] strArray = GenerateStrArray(10);
 
             Console.WriteLine("The integer array is:");
             DisplayArray(intArray);
             Console.WriteLine();
 
+            /*
             Console.WriteLine("The double array is:");
             DisplayArray(dblArray);
             Console.WriteLine();
@@ -26,6 +28,27 @@ namespace George_Zhou_COMP212_Sec05_Lab01
             Console.WriteLine("The char array is:");
             DisplayArray(chrArray);
             Console.WriteLine();
+            */
+
+            Console.WriteLine("The string array is:");
+            DisplayArray(strArray);
+            Console.WriteLine();
+
+            // Using prompt here due to array is generated easily and this provide ease of testing
+            Console.WriteLine("The item you wish to search for in the integer array is?");
+            int searchKeyI = Int32.Parse(Console.ReadLine());
+            int index = Search(intArray, searchKeyI);
+            string msg = index == -1 ? $"{index} Index not Found" : $"{searchKeyI} found on Index {index}";
+            Console.WriteLine(msg+"\n");
+
+
+
+            Console.WriteLine("The item you wish to search for in the string array is?");
+            string searchKeyS = Console.ReadLine();
+            index = Search(strArray, searchKeyS);
+            msg = index == -1 ? $"{index} Index not Found" : $"{searchKeyS} found on Index {index}";
+            Console.WriteLine(msg+ "\n");
+            // End Prompts
         }
 
         /// Generic Method to display array
@@ -75,6 +98,33 @@ namespace George_Zhou_COMP212_Sec05_Lab01
                 rndArray[i] = (rnd.Next(0, 2) == 1)?rndNumA :rndNumB; // Select capitaolized or non capitalized
             }
             return rndArray;
+        }
+
+        ///Generate Random String Array
+        private static string[] GenerateStrArray(int length)
+        {
+            string[] strDic = {"AMD", "Alienware", "Apple", "Nvidia", "ASRock", "Asus", "BenQ", "Biostar", "Brother", "Cisco", "Compal", "Cooler Master", "Dell", "Epson", "EVGA", "Gigabyte", "Google", "HP", "HTC", "IBM", "Intel", "Lenovo", "LG", "Microsoft",
+            "Nvidia", "Oracle", "Razer", "Samsung", "Sony", "Toshiba", "Vaio", "Zotac"};
+            Random rnd = new Random();
+            string[] rndArray = new string[length];
+            for (int i = 0; i < rndArray.Length; ++i)
+            {
+                rndArray[i] = strDic[rnd.Next(strDic.Length)];
+            }
+            return rndArray;
+        }
+
+        /// Search method
+        private static int Search<T>(T[] dataArray, T searchKey) where T:IComparable<T>
+        {
+            foreach (var element in dataArray)
+            {
+               if (element.CompareTo(searchKey) == 0)
+                {
+                    return Array.IndexOf(dataArray, element);
+                }
+            }
+            return -1;
         }
 
 
