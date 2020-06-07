@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FDC5FA6-3B9A-4339-A857-5E9B77F7058D}</ProjectGuid>
+    <ProjectGuid>{CC24750D-7ADF-40F6-9A5B-F20D1B42BB1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>George_Zhou_LinkedListLibraryTest</RootNamespace>
-    <AssemblyName>George-Zhou_LinkedListLibraryTest</AssemblyName>
+    <RootNamespace>George_Zhou_QueueTest</RootNamespace>
+    <AssemblyName>George-Zhou_QueueTest</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,6 +36,9 @@
     <Reference Include="George-Zhou_LinkedListLibrary_Framework">
       <HintPath>..\George-Zhou_LinkedListLibrary_Framework\bin\Debug\George-Zhou_LinkedListLibrary_Framework.dll</HintPath>
     </Reference>
+    <Reference Include="George-Zhou_QueueInheritanceLibrary">
+      <HintPath>..\George-Zhou_QueueInheritanceLibrary\bin\Debug\George-Zhou_QueueInheritanceLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListTest.cs" />
+    <Compile Include="QueueTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
