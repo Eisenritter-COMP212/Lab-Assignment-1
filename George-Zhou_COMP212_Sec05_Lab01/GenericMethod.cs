@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace George_Zhou_COMP212_Sec05_Lab01
+namespace GenericMethods
 {
     class GenericMethod
     {
