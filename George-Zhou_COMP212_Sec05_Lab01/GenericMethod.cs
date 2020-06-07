@@ -114,7 +114,7 @@ namespace George_Zhou_COMP212_Sec05_Lab01
             return rndArray;
         }
 
-        /// Search method
+        /// Geneirc Search method
         private static int Search<T>(T[] dataArray, T searchKey) where T:IComparable<T>
         {
             foreach (var element in dataArray)
